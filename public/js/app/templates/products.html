@@ -1,0 +1,43 @@
+<div class="products-view">
+	<div class="products-choose">
+		<div class="products-title">Choose Product Below</div>
+		<button class="btn btn-primary choose-motor product-btn">Motor Products</button>
+		<div class="motor-dropdown">
+			<label>Select Motor Product</label>
+			<select class="full-drop motor-drop">
+			 {{#each motor}}
+				  <option data-PaymentOptions='{{AllowedPaymentOptions}}' data-ProductClassID='{{ProductClassID}}' data-ProductCode='{{ProductCode}}' data-ProductId='{{ProductId}}' data-IsWholeLife='{{IsWholeLife}}' >{{ProductName}}</option>
+			  {{/each}}
+			</select>
+			<button class="btn btn-default quote-motor">Start Quote</button>
+		</div>
+		<button class="btn btn-primary choose-life product-btn">Life Products</button>
+		<div class="life-dropdown">
+			<label>Select Life Product</label>
+			<select class="full-drop life-drop">
+			 {{#each life}}
+				  <option data-PaymentOptions='{{AllowedPaymentOptions}}' data-ProductClassID='{{ProductClassID}}' data-ProductCode='{{ProductCode}}' data-ProductId='{{ProductId}}' data-IsWholeLife='{{IsWholeLife}}' >{{ProductName}}</option>
+			 {{/each}}
+			</select>
+			<button class="btn btn-default quote-life">Get Quote</button>
+		</div>
+	</div>
+	<div class="products-quote">
+		<div class="products-title">Product Quote</div>
+		<h1 class="temp-search-result">Select Product for Quote</h1>
+		<div class="quote_value">
+			<h1>Your Quick Quote</h1>
+			<hr>
+			<p>This annual premium is based on information you provided in your last quote</p>
+			<p class="quote_amount_holder">&#8358; <span class="quote_amount"></span></p>
+			{{{quoteButton}}}
+		</div>
+		<form class="quote-form">
+			<div class="quote-error"></div>
+			<h1 class="quote-title"></h1>
+			<div class="quote-question-1"></div>
+			<div class="quote-question-2"></div>
+			<div class="quote-button"></div>
+		</form>
+	</div>
+</div>

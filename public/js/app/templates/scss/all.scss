@@ -1,0 +1,31 @@
+//HELPERS
+@import "variables.scss";
+
+//FONT AWESOME 
+@import "plugins/font-awesome/font-awesome.scss";
+
+//TEMPLATES
+@import "header.scss";
+@import "profile.scss";
+@import "search.scss";
+@import "page.scss";
+@import "login.scss";
+@import "quickResult.scss";
+@import "products.scss";
+@import "contactAdd.scss";
+@import "customerProfile.scss";
+@import "discoveryQuestions.scss";
+@import "kyc.scss";
+@import "nav.scss";
+@import "miniCart.scss";
+@import "policy.scss";
+@import "esms.scss";
+@import "payment.scss";
+
+//PLUGINS
+@import "plugins/bootstrap.scss";
+@import "plugins/edit.scss";
+@import "plugins/animations.scss";
+
+//VENDOR
+@import "vendor/toggle.scss";

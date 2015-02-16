@@ -1,0 +1,84 @@
+{
+	"name": "Kazeem Abdul",
+	"policies": [
+		{
+			"_id": "MS-P-328013u08",
+		},
+		{
+			"_id": "MS-P-u13084d082",
+		},
+		{
+			"_id": "MS-P-320138dh082",
+		}
+
+	],
+	"claims": [
+		{
+			"_id": "MS-C-1290378031",
+		}
+
+	],
+	"member-since": "01/02/2013",
+	"profile-image": "no_user.png"
+
+},
+{
+	"name": "Kayode Obowole",
+	"policies": [
+		{
+			"_id": "MS-P-328013u08",
+		},
+		{
+			"_id": "MS-P-u13084d082",
+		}
+
+	],
+	"claims": [
+		{
+			"_id": "MS-C-1290378031",
+		},
+		{
+			"_id": "MS-C-1290378031",
+		}
+
+	],
+	"member-since": "01/02/2013",
+	"profile-image": "user_3.jpg"
+
+},
+{
+	"name": "Kelechi Okafor",
+	"policies": [
+		{
+			"_id": "MS-P-doiu3820180",
+		},
+		{
+			"_id": "MS-P-1348dh38032",
+		},
+		{
+			"_id": "MS-P-14831dhu30",
+		}
+
+	],
+	"claims": [
+
+	],
+	"member-since": "01/02/2013",
+	"profile-image": "user_1.jpg"
+
+},
+{
+	"name": "David Jituboh",
+	"policies": [
+		{
+			"_id": "MS-P-328013u08",
+		}
+
+	],
+	"claims": [
+
+	],
+	"member-since": "28/04/2012",
+	"profile-image": "user_2.jpg"
+
+}

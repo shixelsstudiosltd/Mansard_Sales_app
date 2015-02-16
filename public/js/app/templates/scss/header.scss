@@ -1,0 +1,76 @@
+#header-container {
+	width: 100%;
+	height: 70px;
+		#desktop-header {
+		width: 100%;
+		height: 100%;
+		position: relative;
+			#desktop-header-left {
+				width: 30%;
+				height: 100%;
+				float: left;
+				background: $secondary_orange;
+
+				h1 {
+					font-size: 1.5em;
+					color: $white;
+					font-weight: 100;
+					line-height: 60px;
+					text-align: center;
+					position: relative;
+					left: -40px;
+				}
+
+				.logo-holder {
+					height: 100%;
+					float: left;
+					padding: 15px;
+				}
+
+
+			}
+			#desktop-header-right {
+				width: 70%;
+				height: 100%;
+				float: right;
+				@include box-shadow($dark_orange -2px -1px 4px 0px);
+				background: $primary_orange;
+				.main-menu-button, .back-menu-button {
+					position: absolute;
+					font-size: 2.5em;
+					color: white;
+					padding: 20px;
+					cursor: pointer;
+				}
+				h1 {
+					text-align: center;
+					font-size: 1.5em;
+					line-height: 35px;
+					color: $white;
+					font-weight: 100;
+				}
+			}
+		}
+}
+
+.cart-button.fa.fa-shopping-cart, .add-contact-button.fa.fa-plus {
+	position: absolute;
+	right: 10px;
+	top: 0px;
+	font-size: 2.5em;
+	color: white;
+	padding: 20px;
+	cursor: pointer;
+}
+.cart-num {
+position: absolute;
+left: 40px;
+font-size: 14px;
+top: 15px;
+border-radius: 100px;
+width: 20px;
+height: 20px;
+text-align: center;
+line-height: 20px;
+background: $black;
+}

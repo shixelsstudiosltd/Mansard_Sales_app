@@ -1,0 +1,96 @@
+<div class="discovery-questions-view">
+		<div class="container-fluid discovery-section-1 discovery-section">
+			<h1>Section {{sections.one.section}} - <span class="section-name">{{sections.one.name}}</span><span class="pull-right small-info">1 of 4</span></h1>
+			{{#each sections.one.questions}}
+				<div class="discovery-question">
+					<div class="getsection1" data-questionid="{{QuestionID}}" data-sectionid="{{SectionID}}">
+						{{QuestionNo}}. {{Question}}
+					</div>
+					<select>
+						{{#each options}}
+							<option value="{{OptionValue}}" data-weight="{{OptionsWeight}}" data-questionid="{{QuestionID}}" data-sectionid="{{SectionID}}">{{OptionDetails}}</option>
+						{{/each}}
+					</select>
+				</div>
+			{{/each}}
+			<button class="pull-right btn btn-primary go-to-sec-2">Next</button>
+			<div class="clear-fix"></div>
+		</div>
+		<div class="container-fluid discovery-section-2 discovery-section">
+			<h1>Section {{sections.two.section}} - <span class="section-name">{{sections.two.name}}</span><span class="pull-right small-info">2 of 4</span></h1>
+			{{#each sections.two.questions}}
+				<div class="discovery-question">
+					<div class="getsection2" data-questionid="{{QuestionID}}" data-sectionid="{{SectionID}}">
+						{{QuestionNo}}. {{Question}}
+					</div>
+					<select>
+						{{#each options}}
+							<option value="{{OptionValue}}" data-weight="{{OptionsWeight}}" data-questionid="{{QuestionID}}" data-sectionid="{{SectionID}}">{{OptionDetails}}</option>
+						{{/each}}
+					</select>
+				</div>
+			{{/each}}
+			<button class="pull-left btn btn-secondary go-to-sec-1">Back</button>
+			<button class="pull-right btn btn-primary go-to-sec-3">Next</button>
+			<div class="clear-fix"></div>
+		</div>
+		<div class="container-fluid discovery-section-3 discovery-section">
+			<h1>Section {{sections.three.section}} - <span class="section-name">{{sections.three.name}}</span><span class="pull-right small-info">3 of 4</span></h1>
+			{{#each sections.three.questions}}
+				<div class="discovery-question">
+					<div class="getsection3" data-questionid="{{QuestionID}}" data-sectionid="{{SectionID}}">
+						{{QuestionNo}}. {{Question}}
+					</div>
+					<select>
+						{{#each options}}
+							<option value="{{OptionValue}}" data-weight="{{OptionsWeight}}" data-questionid="{{QuestionID}}" data-sectionid="{{SectionID}}">{{OptionDetails}}</option>
+						{{/each}}
+					</select>
+				</div>
+			{{/each}}
+			<button class="pull-left btn btn-secondary go-to-sec-2">Back</button>
+			<button class="pull-right btn btn-primary go-to-sec-4">Next</button>
+			<div class="clear-fix"></div>
+			<div class="clear-fix"></div>
+		</div>
+		<div class="container-fluid discovery-section-4 discovery-section">
+			<h1>Section {{sections.four.section}} - <span class="section-name">{{sections.four.name}}</span><span class="pull-right small-info">4 of 4</span></h1>
+			{{#each sections.four.questions}}
+				<div class="discovery-question">
+					<div class="getsection4" data-questionid="{{QuestionID}}" data-sectionid="{{SectionID}}">
+						{{QuestionNo}}. {{Question}}
+					</div>
+					<select>
+						{{#each options}}
+							<option value="{{OptionValue}}" data-weight="{{OptionsWeight}}" data-questionid="{{QuestionID}}" data-sectionid="{{SectionID}}">{{OptionDetails}}</option>
+						{{/each}}
+					</select>
+				</div>
+			{{/each}}
+			<button class="pull-left btn btn-secondary go-to-sec-3">Back</button>
+			<button class="pull-right btn btn-primary submit-discovery">Submit</button>
+			<div class="clear-fix"></div>
+		</div>
+		<div class="container-fluid results-section">
+			<div class="section1-results-section section-results-section">
+				<h1>Section 1 Results - {{sections.one.name}}</h1>
+				<div class="observations"></div>
+				<div class="reccomendations"></div>
+			</div>
+			<div class="section2-results-section section-results-section">
+				<h1>Section 2 Results - {{sections.two.name}}</h1>
+				<div class="observations"></div>
+				<div class="reccomendations"></div>
+			</div>
+			<div class="section3-results-section section-results-section">
+				<h1>Section 3 Results - {{sections.three.name}}</h1>
+				<div class="observations"></div>
+				<div class="reccomendations"></div>
+			</div>
+			<div class="section4-results-section section-results-section">
+				<h1>Section 4 Results - {{sections.four.name}}</h1>
+				<div class="observations"></div>
+				<div class="reccomendations"></div>
+			</div>
+		</div>
+</div>

@@ -1,0 +1,50 @@
+.quick-result-img {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	position: relative;
+	top: -45px;
+	margin-bottom: -40px;
+		img {
+		border: 3px solid #e35522;
+		width: 90px;
+	}
+}
+
+h1.quick-result-name {
+	text-align: center;
+	font-size: 1.5em;
+	.bold {
+		color: $primary_orange;
+		font-weight: bold;
+		font-size: 0.8em;
+	}
+}
+
+
+h2.quick-result-member {
+	text-align: center;
+	font-size: 1em;
+	margin-top: -20px;
+	font-style: italic;
+	color: $primary_orange;
+}
+
+.quick-result-info {
+	text-align: center;
+
+	.bold {
+		font-weight: bold;
+	}
+}
+
+.quick-result-action {
+text-align: center;
+	button {
+	display: block;
+	margin: 0px auto;
+	width: 80%;
+	height: 50px;
+	margin-bottom:20px;
+	}
+}

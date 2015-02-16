@@ -1,0 +1,36 @@
+<div class="mini-cart-view">
+	<div class="mini-cart-items">
+		{{#if items}}
+			<ul class="mini-cart-items-holder">
+			{{#each items}}
+				<li class="mini-cart-item" data-itempos="{{pos}}" id="{{miniItemID}}">
+					<div class="row">
+						<div class="col-md-2">
+							<div class="mini-cart-item-img"><img src="img/{{img}}"></div>
+						</div>
+						<div class="col-md-8">
+							<div class="mini-cart-item-info">
+								<div class="mini-cart-item-name">{{name}}</div>
+								<div class="mini-cart-item-customer"><span class="mini-cart-item-price">&#8358; {{price}}</span> Customer: {{customer}}</div>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="mini-cart-action">
+								<div class="mini-cart-item-remove" data-itemid="{{miniItemID}}"><i class="fa fa-times"></i></div>
+								<div class="clear-fix"></div>
+							</div>
+						</div>
+					</div>
+				</li>
+			{{/each}}
+			</ul>
+		{{else}}
+			<p class="empty-mini-cart">Cart is Empty!</p>
+		{{/if}}
+	</div>
+	<div class="mini-cart-footer">
+		<div class="mini-cart-total"><span class="mini-total">Total </span>&#8358; <span class="mini-card-total-holder">{{total}}</span></div>
+
+		<button class="btn btn-primary mini-checkout-button">Checkout</button>
+	</div>
+</div>

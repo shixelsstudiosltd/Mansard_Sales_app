@@ -1,0 +1,260 @@
+<div class="save-policy-view">
+	{{#if isMotor}}
+	<form class="policy-motor-form">
+		<div class="policy-motor-form-1 policy-motor-form-page">
+			<h1>1. Basic Information</h1>
+			<label>Insurance Start Date</label>
+			<div class="policy-item-large">
+				<select class="save-policy-date day">
+					<option value="0">--Choose Day--</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+				<select class="save-policy-date month">
+					<option value="0">--Choose Month--</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
+				<select class="save-policy-date year">
+					<option value="0">--Choose Year--</option>
+					<option value="2015">2015</option>
+					<option value="2016">2016</option>
+					<option value="2017">2017</option>
+					<option value="2018">2018</option>
+					<option value="2019">2019</option>
+					<option value="2020">2020</option>
+				</select>
+			</div>
+			
+			<div class="policy-item">
+			<label>Vehicle Manufacturing Year</label>
+				<select name="ManufactureYear" class="save-policy-man-year">
+					<option value="0">--Choose Year--</option>
+					{{#each motor.manYears}}
+					<option value="{{Value}}">{{Description}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="policy-item">
+				<label>Engine Number</label>
+				<input name="EngineNo" class="save-policy-engine-number" type="text">
+			</div>
+			<div class="policy-item">
+				<label>Chasis Number</label>
+				<input name="ChassisNo" class="save-policy-chasis-number" type="text">
+			</div>
+			<div class="policy-item">
+				<label>Registration Place</label>
+				<select name="RegPlace" class="save-policy-reg-place">
+					<option value="0">--Choose Place--</option>
+					{{#each motor.places}}
+					<option value="{{Code}}">{{RegPlaceName}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="policy-item">
+				<label>Plate Number</label>
+					<input name="PlateNo" type="text" class="save-policy-plate-num">
+			</div>
+			<div class="policy-item">
+				<label>Plate Colour</label>
+				<select name="PlateColor" class="save-policy-reg-place">
+					<option value="0">--Choose Colour--</option>
+					{{#each motor.plates}}
+					<option value="{{Code}}">{{PlateColourName}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="policy-item">
+				<label>Vehicle Use</label>
+				<select name="VehicleUse" class="save-policy-reg-place">
+					<option value="0">--Choose Use--</option>
+					{{#each motor.uses}}
+					<option value="{{Code}}">{{VehicleUseName}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="policy-item">
+				<label>Sum insured/Value of the vehicle</label>
+					<input name="SumAssured" type="text" class="save-policy-value">
+			</div>
+			<button class="policy-next btn btn-primary pull-right to-motor-2">Next</button>
+		</div>
+		<div class="policy-motor-form-2 policy-motor-form-page">
+			<h1>2. Pictures of the vehicle</h1>
+			<div class="policy-item">
+				<label>Front of Car</label>
+				<input name="MotorFrontSide" type="file">
+			</div>
+			<div class="policy-item">
+				<label>Back of Car</label>
+				<input name="MotorBackSide" type="file">
+			</div>
+			<div class="policy-item">
+				<label>Left of Car</label>
+				<input name="MotorLeftSide" type="file">
+			</div>
+			<div class="policy-item">
+				<label>Right of Car</label>
+				<input name="MotorRightSide" type="file">
+			</div>
+			<div class="policy-item">
+				<label>Proof of Ownership</label>
+				<input name="ProofOfOwnerShip" type="file">
+			</div>
+			<div class="policy-item">
+				<label>Drivers Licence</label>
+				<input name="DriverLicence" type="file">
+			</div>
+			<div class="clear-fix"></div>
+			<button class="policy-next btn btn-secondar pull-left to-motor-1">Back</button>
+			{{{submitButton}}}
+		</div>
+	</form>
+	{{else}}
+	<form class="policy-life-form">
+		<div class="policy-item">
+			<label>Select Product</label>
+				<select class="save-policy-product">
+					{{#each lifeProducts}}
+					<option value="{{ProductCode}}">{{ProductName}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="policy-item">
+			<label>Sum Assured</label>
+				<input class="save-policy-sum-assured">
+			</div>
+			<div class="policy-item">
+			<label>Rider Type</label>
+				<select class="save-policy-product">
+					{{#each lifeProducts}}
+					<option value="{{ProductCode}}">{{ProductName}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="policy-item">
+			<label>Insurance Period</label>
+				<select class="save-policy-insurance-period">
+					<option>--Select Product Above--</option>
+				</select>
+			</div>
+			<div class="policy-item">
+			<label>Payment Period</label>
+				<select class="save-policy-payment-period">
+					<option>--Select Product Above--</option>
+				</select>
+			</div>
+			<div class="policy-item">
+			<label>Payment Frequency</label>
+				<select class="save-policy-product">
+					{{#each payFreq}}
+					<option value="{{Value}}">{{Description}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="policy-item-large">
+				<label>Insurance Start Date</label>
+				<select class="save-policy-life-date day">
+					<option value="0">--Choose Day--</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+				<select class="save-policy-life-date month">
+					<option value="0">--Choose Month--</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
+				<select class="save-policy-life-date year">
+					<option value="0">--Choose Year--</option>
+					<option value="2015">2015</option>
+					<option value="2016">2016</option>
+					<option value="2017">2017</option>
+					<option value="2018">2018</option>
+					<option value="2019">2019</option>
+					<option value="2020">2020</option>
+				</select>
+			</div>
+			<div class="clear-fix"></div>
+			{{{submitButton}}}
+	</form>
+	{{/if}}
+</div>

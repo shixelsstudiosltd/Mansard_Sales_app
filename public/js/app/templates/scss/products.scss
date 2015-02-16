@@ -1,0 +1,109 @@
+.products-view {
+	width: 100%;
+	height: 100%;
+	float: right;
+	background: $white;
+}
+
+.products-choose {
+	float: left;
+	width: 30%;
+	height: 100%;
+	text-align: center;
+}
+
+.products-quote {
+	border-left: 1px solid $search_grey;
+	height: 100%;
+	float: right;
+	width: calc(70% - 1px);
+}
+
+.products-title {
+	width: 100%;
+	height: 50px;
+	background: $light_grey;
+	text-align: center;
+	line-height: 50px;
+	font-size: 1em;
+	color: $medium_grey;
+	font-weight: 100;
+}
+.life-dropdown {
+	display:none;
+}
+
+.motor-dropdown {
+	display:none;
+}
+
+
+.product-btn {
+width: 80%;
+margin: 15px;
+height: 50px;
+}
+button.btn.btn-primary.choose-motor.product-btn {
+margin-top: 50px;
+}
+
+h1.temp-search-result {
+	text-align: center;
+	color: $mute_grey;
+	font-size: 1.5em;
+	font-weight: 200;
+	font-style: italic;
+	position: relative;
+	top: 40%;
+}
+
+.motor-dropdown, .life-dropdown {
+margin-top: 30px;
+margin-bottom: 20px;
+label {
+	font-weight:bold;
+}
+}
+
+.full-drop {
+	width: 80%;
+}
+
+.quote-title {
+font-size: 1.5em;
+}
+form.quote-form {
+text-align: center;
+}
+
+.quote_value {
+	background: $light_orange;
+	border: 1px solid $primary_orange;
+	margin: 20px;
+	padding: 0 20px;
+	display:none;
+	border-radius: 5px;
+
+	 h1 {
+		font-size: 1.2em;
+		margin-bottom: -20px;
+		margin-top: 0;
+	}
+
+	p {
+font-size: 0.8em;
+margin-top: -15px;
+}
+.quote_amount_holder {
+	color: $primary_orange;
+	font-size: 3em;
+	padding: 20px;
+	padding-left: 0;
+	padding-bottom: 10px;
+}
+
+	hr {
+		border-top-color: $primary_orange;
+		border-bottom: none;
+	}
+}

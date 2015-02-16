@@ -1,0 +1,31 @@
+form.policy-motor-form, form.policy-life-form{
+padding: 0 10%;
+}
+.policy-item-large {
+width: 100%;
+margin: 10px 0;
+label {
+display: block;
+}
+select {
+width: 30%;
+}
+}
+.policy-item {
+width: 45%;
+margin: 10px 0;
+margin-right:25px;
+display:inline-block;
+label {
+display: block;
+}
+select {
+width: 100%;
+}
+input {
+	width:100%;
+}
+}
+.policy-motor-form-2 {
+display: none;
+}

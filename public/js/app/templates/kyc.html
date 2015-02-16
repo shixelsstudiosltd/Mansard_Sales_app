@@ -1,0 +1,165 @@
+<div class="kyc-view">
+	<div class="products-choose">
+		<div class="products-title">Customer Type</div>
+		<button class="btn btn-primary choose-ind kyc-button">Individual</button>
+		<button class="btn btn-primary choose-corp kyc-button">Corporate</button>
+	</div>
+	<div class="products-quote">
+		<div class="products-title">Questions</div>
+		<h1 class="temp-search-result">Select Type To Begin</h1>
+		<form class="ind-form">
+			<div class="ind-form-1">
+					<div class="kyc-question">
+					<label>First Name</label>
+					<input name='FirstName' class="form-control" type="text" placeholder="First Name">
+					</div>
+					<div class="kyc-question">
+					<label>Last Name</label>
+					<input name='LastName' class="form-control" type="text" placeholder="Last Name">
+					</div>
+
+					<div class="kyc-question">			
+						<label>Customer Address</label>
+						<input name='CustomerAddress' class="form-control" type="text" placeholder="Customer Address">
+					</div>
+					<div class="kyc-question">
+						<label>Annual Salary</label>
+						<select name='AnnualSalary' class="form-control">
+							<option>--Select Salary--</option>
+							{{#each dropdowns.salary}}
+							<option value="{{Value}}">{{Description}}</option>
+							{{/each}}
+						</select>
+					</div>
+
+					<div class="kyc-question">
+					<label>Correspondence Address</label>
+					<input name='CorrespondenceAddress' class="form-control" type="text" placeholder="Correspondence Address">
+					</div>
+
+					<div class="kyc-question">
+					<label>Date Of birth</label>
+					<input name='DateOFBirth' class="form-control" type="date" placeholder="Date Of birth">
+					</div>
+
+					<div class="kyc-question">
+					<label>Email</label>
+					<input name='EMail' class="form-control" type="text" placeholder="Email">
+					</div>
+
+					<div class="kyc-question">
+					<label>Employment Type</label>
+					<select name='EmploymentType' class="form-control">
+						<option>--Select Employement Type--</option>
+						{{#each dropdowns.employ}}
+							<option value="{{Value}}">{{Description}}</option>
+						{{/each}}
+					</select>
+					</div>
+
+					<div class="kyc-question">
+					<label>Hobbies</label>
+					<input name='Hobbies' class="form-control" type="text" placeholder="Hobbies">
+					</div>
+
+					<div class="kyc-question">
+					<label>Home Phone No</label>
+					<input name='HomePhoneNo' class="form-control" type="text" placeholder="Home Phone No">
+					</div>
+					<button class="btn btn-primary go-to-ind2 pull-right">Next</button>
+				</div>
+
+			<div class="ind-form-2">
+				<div class="kyc-question">
+				<label>Job Title</label>
+				<select name='JobTitle' class="form-control">
+					<option>--Select Job Title--</option>
+					{{#each dropdowns.job}}
+						<option value="{{Value}}">{{Description}}</option>
+					{{/each}}
+				</select>
+				</div>
+
+				
+			
+				<div class="kyc-question">
+				<label>Mobile No</label>
+				<input name='MobileNo' class="form-control" type="text" placeholder="Mobile No">
+				</div>
+
+				<div class="kyc-question">
+				<label>Office Address</label>
+				<input name='OfficeAddress' class="form-control" type="text" placeholder="Office Address">
+				</div>
+
+				<div class="kyc-question">
+				<label>Phone No</label>
+				<input name='PhoneNo' class="form-control" type="text" placeholder="Phone No">
+				</div>
+
+				<div class="kyc-question">
+					<label>Profession</label>
+					<select name='Profession' class="form-control">
+						<option>--Select Profession--</option>
+						{{#each dropdowns.profession}}
+							<option value="{{Value}}">{{Description}}</option>
+						{{/each}}
+					</select>
+				</div>
+
+				<div class="kyc-question">			
+				<label>Religion</label>
+				<select name='Religion' class="form-control">
+					<option>--Select Religion--</option>
+					{{#each dropdowns.religion}}
+						<option value="{{Value}}">{{Description}}</option>
+					{{/each}}
+				</select>
+				</div>
+					<button class="btn btn-secondary go-to-ind1 pull-left">Back</button>
+					<button class="btn btn-primary submit-ind pull-right">Submit</button>
+					<div class="clear-fix"></div>
+					<div class="status-kyc"></div>
+				</div>
+		</form>
+
+		<form class="corp-form">
+			<div class="kyc-question">
+				<label>Subsidiary Name</label>
+				<input name="SubsidiaryName" class="form-control" type="text" placeholder="Subsidiary Name">
+			</div>
+			<div class="kyc-question">
+			<label>Business Activity</label>
+			<input name="BusinessActivity" class="form-control" type="text" placeholder="Business Activity">
+			</div>
+
+			<div class="kyc-question">			
+				<label>Description of Activity/Asset</label>
+				<input name="DescriptionOfAcitivity" class="form-control" type="text" placeholder="Description of Activity/Asset">
+			</div>
+			<div class="kyc-question">
+				<label>Transaction Status</label>
+				<select name="TransactionStatus" class="form-control">
+					<option>--Select Transaction Status--</option>
+					{{#each dropdowns.transaction}}
+						<option value="{{Value}}">{{Description}}</option>
+					{{/each}}
+				</select>
+			</div>
+
+			<div class="kyc-question">
+				<label>Business Type</label>
+				<select name="BusinessType" class="form-control">
+					<option>--Select Business Type--</option>
+					{{#each dropdowns.business}}
+						<option value="{{Value}}">{{Description}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="clear-fix"></div>
+			<button class="btn btn-secondary submit-corp">Submit</button>
+			<br>
+			<div class="status-kyc"></div>
+		</form>
+	</div>
+</div>

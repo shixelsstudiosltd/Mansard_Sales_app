@@ -1,0 +1,29 @@
+<div class="esms-view">
+	<div class="esms-choose">
+		<div class="products-title">Choose Sectors Below</div>
+		<div class="esms-choose-item">
+			<label>Sector of Insured</label>
+			<select class="esms-sector">
+				<option value="0">--Choose Sector--</option>
+				{{#each sectors.main}}
+					<option value="{{SectorID}}">{{SectorName}}</option>
+				{{/each}}
+			</select>
+		</div>
+		<div class="esms-choose-item">
+			<label>Sub Sector of Insured</label>
+			<select class="esms-sub-sector">
+				<option value="0">--Choose Sub Sector--</option>
+				{{#each sectors.sub}}
+					<option value="{{SectorID}}">{{SectorName}}</option>
+				{{/each}}
+			</select>
+		</div>
+		<button class="esms-submit-sector btn btn-primary">Submit</button>
+	</div>
+	<div class="esms-form">
+		<div class="products-title">Answer ESMS Questions Below</div>
+		<h1 class="temp-sector-result">Select Sectors to begin</h1>
+	</div>
+	<div class="clear-fix"></div>
+</div>

@@ -1,0 +1,48 @@
+<div class="customer-profile-view">
+	<div class="customer-profile-header">
+		<h1>{{customer.keepFullName}}</h1>
+	</div>
+	<div class="customer-profile-left">
+		<h2>Customer Information</h2>
+		<div class="customer-profile-info">
+		{{#if customer.addy}}<p class="customer-editable-field"><span class="bold label">Address:</span> <span class="value">{{customer.addy}}</span></p>{{/if}}
+        {{#if customer.PhoneNo}}<p class="customer-editable-field"><span class="bold label">Phone:</span> <span class="value">{{customer.PhoneNo}}</span></p>{{/if}}
+        {{#if customer.tel2}}<p class="customer-editable-field"><span class="bold label">Other Phone:</span> <span class="value">{{customer.tel2}}</span></p>{{/if}}
+        {{#if customer.bdate}}<p class="customer-editable-field"><span class="bold label">DOB:</span> <span class="value">{{customer.bdate}}</span></p>{{/if}}
+        {{#if customer.email}}<p class="customer-editable-field"><span class="bold label">Email:</span> <span class="value">{{customer.keepEmail}}</span></p>{{/if}}
+        </div>
+        <hr>
+        <h2>Policy Information</h2>
+        {{#if lifePols}}
+        {{#each lifePols}}
+        {{/each}}
+        {{else}}
+        {{#if genPols}}
+        {{#each genPols}}
+        {{/each}}
+	        {{else}}
+	        	<div class="no-policies">No Active Policies</div>
+	        	<button class="btn btn-secondary load-more-button" disabled>Load More...</button>
+	        {{/if}}
+        {{/if}}
+	</div>
+	<div class="customer-profile-right">
+		<div class="customer-profile-img"><div class="customer-inner-img"><img src="img/no_user.png"></div></div>
+		<p>Customer #: {{customer.CustomerNo}}</p>
+		{{#if customer.email}}
+		<button class="btn btn-primary email-customer-button customer-button"><i class="fa fa-envelope edit-cust-icon"></i>Email Customer</button>
+		{{else}}
+		<button class="btn btn-primary email-customer-button customer-button" disabled><i class="fa fa-envelope edit-cust-icon"></i>Email Customer</button>
+		{{/if}}
+		{{#if customer.PhoneNo}}<button class="btn btn-primary call-customer-button customer-button"><i class="fa fa-phone edit-cust-icon"></i>Call Customer</button>
+		{{else}}
+		{{#if customer.tel2}}
+		<button class="btn btn-primary call-customer-button customer-button"><i class="fa fa-phone edit-cust-icon"></i>Call Customer</button>
+		{{else}}
+		<button class="btn btn-primary call-customer-button customer-button" disabled=""><i class="fa fa-phone edit-cust-icon"></i>Call Customer</button>
+		{{/if}}
+		{{/if}}
+		<button class="btn btn-primary add-customer-button customer-button"><i class="fa fa-plus edit-cust-icon"></i>Add Policy(s)</button>
+	</div>
+	<div class="clear-fix"></div>
+</div>

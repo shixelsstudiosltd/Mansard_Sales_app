@@ -1,0 +1,64 @@
+$primary_orange: #e35522;
+$dark_orange: #af421b;
+$secondary_orange: #c84b1e;
+$profile_grey: #33393d;
+$search_grey: #eaedf1;
+$light_grey: #f9fafc;
+$medium_grey: #53595d;
+$primary_green: #154a3e;
+$white: #fff;
+$mute_grey: #b0b0b0;
+$light_orange: #ffded2;
+$black: #000;
+$header_grey: #eaedf1;
+
+$linkedin_color: #1883BB;
+$facebook_color: #425F9C;
+$twitter_color: #4B9ED1;
+
+
+.glass-effect {
+	box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.3), 0px 2px 3px 0px rgba(0, 0, 0, 0.6);
+}
+
+@include font-face("Open Sans", font-files("fonts/opensans/regular.ttf"));
+
+$primary_font: "Open Sans";
+
+.unselectable {
+	-moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+.clear-fix {
+	clear: both;
+}
+
+button.btn.btn-primary {
+	background: $primary_orange;
+	border: 1px solid darken($primary_orange, 5%) !important;
+	&:hover {
+		background: $secondary_orange;
+	}
+}
+
+button.btn.btn-secondary {
+	background: $primary_green !important;
+	border: 1px solid darken($primary_green, 5%) !important;
+	color: $white;
+	margin-bottom: 15px;
+
+	&:hover {
+		background: darken($primary_green, 5%);
+	}
+}
+form input[type='number']::-webkit-outer-spin-button,
+form input[type='number']::-webkit-inner-spin-button {
+    opacity: 1;
+}
+
+.show {
+	display: block !important;
+}

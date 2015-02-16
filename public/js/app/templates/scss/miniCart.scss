@@ -1,0 +1,132 @@
+.mini-cart-view {
+	position: absolute;
+	background: #fff;
+	border: 1px solid $search_grey;
+	right: 20px;
+	top: 70px;
+	padding-bottom: 44px;
+	width: 350px;
+	border-radius:3px;
+	z-index:2;
+	@include box-shadow ($search_grey 0px 0px 3px 0px);
+
+}
+.mini-cart-view:after, .mini-cart-view:before {
+	bottom: 100%;
+	right: 12px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.mini-cart-view:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #fff;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.mini-cart-view:before {
+	border-color: rgba(234, 237, 241, 0);
+	border-bottom-color: $search_grey;
+	border-width: 11px;
+	margin-left: -11px;
+}
+
+.mini-cart-footer {
+	background: $light_grey;
+	width: 100%;
+	height: 45px;
+	bottom: 0;
+	position: absolute;
+	border-top: 1px solid $header_grey;
+}
+.mini-cart-items-holder {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	.mini-cart-item {
+		width: 100%;
+		height: 65px;
+		display: block;
+		overflow: hidden;
+		border-bottom: 1px solid $header_grey;
+		.mini-cart-item-info {
+			height: 100%;
+			top: 10px;
+			position: relative;
+			left: 30px;
+			.mini-cart-item-name {
+				font-size: 18px;
+			}
+		}
+
+		.mini-cart-item-img {
+			height: 65px;
+
+			img {
+				height: 100%;
+			}
+		}
+		.mini-cart-item-customer {
+			font-size: 12px;
+			font-weight: bold;
+			color: $primary_orange;
+		}
+		.mini-cart-item-qty {
+			float: left;
+
+			input {
+				width: 25px;
+			}
+		}
+		.mini-cart-item-price {
+			color: $primary_green;
+		}
+		.mini-cart-item-remove {
+			float: right;
+		}
+		.mini-cart-action {
+			height: 100%;
+			top: 20px;
+			position: relative;
+			left: -20px;
+			color: $primary_orange;
+			font-size: 18px;
+			cursor: pointer;
+		}
+	}
+}
+
+.mini-checkout-button {
+float: right;
+position: relative;
+top: 5px;
+right: 10px;
+}
+
+.full-cart-view {
+float: right;
+position: relative;
+right: 20px;
+top: 15px;
+font-size: 12px;
+}
+
+.mini-cart-total {
+float: left;
+top: 12px;
+position: relative;
+left: 10px;
+color: $primary_green;
+font-weight:300;
+}
+
+.mini-total {
+font-weight: bold !important;
+color: $black !important;
+}
+
+

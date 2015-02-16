@@ -1,0 +1,32 @@
+<div class="profile-view">
+	<div class="profile-picture">
+		<img src="img/bayo.jpg">
+	</div>
+	<div class="profile-info">
+		<div class="profile-info-personal">
+			<p><span class="bold">Name:</span> {{agent.AgentName}}</p>
+			{{#if agent.Unit}}<p><span class="bold">Unit:</span> {{agent.Unit}}</p>{{/if}}
+			{{#if agent.Group}}<p><span class="bold">Group:</span> {{agent.Group}}</p>{{/if}}
+			{{#if agent.Division}}<p><span class="bold">Division:</span> {{agent.Division}}</p>{{/if}}
+		</div>
+
+		{{#if hasGraphs}}
+		<p>Total Life Premium YTD</p>
+		<p><span class="dash-bold">Target:</span> NGN{{graphs.life.Target}} | <span class="dash-bold">YTD:</span> NGN{{graphs.life.YTD}}</p>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{graphs.lifeperc}}%">
+		    <span class="sr-only">{{graphs.lifeperc}}% Complete</span>
+		  </div>
+		</div>
+		
+		<p>Total Non Life Premium YTD</p>
+		<p><span class="dash-bold">Target:</span> NGN{{graphs.nonlife.Target}} | <span class="dash-bold">YTD:</span> NGN{{graphs.nonlife.YTD}}</p>
+		<div class="progress">
+		  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{graphs.nonlifeperc}}%">
+		    <span class="sr-only">{{graphs.nonlifeperc}}% Complete</span>
+		  </div>
+		</div>
+		<p><span class="dash-bold">Total Claims Paid YTD</span>: NGN{{graphs.claims.YTD}}</p>
+		{{/if}}
+	</div>
+</div>

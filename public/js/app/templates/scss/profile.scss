@@ -1,0 +1,49 @@
+#user-profile-container {
+	float: left;
+	width: 30%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	z-index: 2;
+	.profile-view {
+		background: $profile_grey;
+		height: 100%;
+		padding: 20px 0;
+		.profile-info {
+			color: $white;
+			font-weight: 100;
+			padding: 0 10%;
+
+			p {
+				font-size: 11px;
+			}
+
+			.dash-bold {
+				font-weight: bold;
+				color: $primary_orange;
+			}
+
+			.profile-info-personal {
+				text-align: center;
+				.bold {
+					font-weight: bold;
+					color: $primary_orange;
+				}
+			}
+		}
+		.profile-picture {
+			width: 120px;
+			height: 120px;
+			overflow: hidden;
+			border-radius: 100px;
+			margin: 10px auto;
+			background: $white;
+			border: 3px solid $primary_orange;;
+		}
+	}
+}
+
+.progress-bar.progress-bar-warning {
+background: $primary_orange;
+}

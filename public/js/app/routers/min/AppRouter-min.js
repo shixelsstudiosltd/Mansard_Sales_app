@@ -1,0 +1,1 @@
+define(["backbone","marionette"],function(e,o){return e.Marionette.AppRouter.extend({appRoutes:{"":"index",login:"login",dashboard:"dashboard","dashboard?*tempProduct":"dashboard",products:"products","contact/add":"contactAdd","customer/add":"customerAdd","customer?*user":"customer",discovery:"discovery",kyc:"kyc",cart:"cart","policy/save/:type":"policy",esms:"esms"}})});
