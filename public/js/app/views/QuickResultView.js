@@ -47,7 +47,7 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
                     window.Mansard.customer = this.quickResult.CustomerNo;
                      window.Mansard.appRouter.navigate('products', {trigger: true});
                 } else if (this.quickResult.type === 'contact') {
-                    getCust = window.Mansard.api.convert(contact);
+                    getCust = window.Mansard.api.convert(this.quickResult);
                     window.Mansard.customer = getCust.CustRowID;
                      window.Mansard.appRouter.navigate('dicovery', {trigger: true});
                 }
