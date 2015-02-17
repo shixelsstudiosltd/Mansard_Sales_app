@@ -49,7 +49,7 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
                 } else if (this.quickResult.type === 'contact') {
                     getCust = window.Mansard.api.convert(this.quickResult);
                     window.Mansard.customer = getCust.CustRowID;
-                     window.Mansard.appRouter.navigate('dicovery', {trigger: true});
+                     window.Mansard.appRouter.navigate('discovery', {trigger: true});
                 }
                
                 //console.log(Mansard.customer);
