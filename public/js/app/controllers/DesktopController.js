@@ -68,7 +68,7 @@ define([
             tempProduct = Mansard.api.parseQueryString(tempProduct);
             console.log(tempProduct);
             if (Mansard.isLoggedIn) {
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Customer & Contact Search', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Customer & Contact Search', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new SearchView({tempProduct: tempProduct})); 
                
            } else {
@@ -81,7 +81,7 @@ define([
                 if (customer) {
                     Mansard.customer = customer;
                 }
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Products Search', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Products Search', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new ProductsView());
             } else {
                 this.login();
@@ -89,7 +89,7 @@ define([
         },
         contactAdd: function() {
             if (Mansard.isLoggedIn) {
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Add a Contact', button: 'fa fa-plus', menu: 'add-contact-button', isCart: false, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Add a Contact', button: 'fa fa-plus', menu: 'add-contact-button', isCart: false, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new ContactAddView());
             } else {
                 this.login();
@@ -97,7 +97,7 @@ define([
         },
         customerAdd: function() {
             if (Mansard.isLoggedIn) {
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Add a Customer', button: 'fa fa-plus', menu: 'add-contact-button', isCart: false, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Add a Customer', button: 'fa fa-plus', menu: 'add-contact-button', isCart: false, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new ContactAddView());
             } else {
                 this.login();
@@ -106,7 +106,7 @@ define([
         customer: function(user) {
             user = Mansard.api.parseQueryString(user);
             if (Mansard.isLoggedIn) {
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Customer Porfile', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Customer Porfile', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new CustomerProfileView({user: user}));
             } else {
                 this.login();
@@ -114,7 +114,7 @@ define([
         },
         discovery: function() {
             if (Mansard.isLoggedIn) {
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Discovery Questions', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Discovery Questions', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new DiscoveryQuestionsView());
             } else {
                 this.login();
@@ -122,7 +122,7 @@ define([
         },
         kyc: function() {
             if (Mansard.isLoggedIn) {
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Know Your Customer', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Know Your Customer', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new KYCView());
             } else {
                 this.login();
@@ -130,7 +130,7 @@ define([
         },
         policy: function() {
             if (Mansard.isLoggedIn) {
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Save Policy', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Save Policy', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new SavePolicyView());
             } else {
                 this.login();
@@ -138,7 +138,7 @@ define([
         },
         esms: function() {
             if (Mansard.isLoggedIn) {
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Environmental and Social Risk Management System (ESMS)', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Environmental and Social Risk Management System (ESMS)', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new ESMSView());
             } else {
                 this.login();
@@ -146,7 +146,7 @@ define([
         },
         payment: function(){
            if (Mansard.isLoggedIn) {
-                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Policy Payment', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-chevron-left', nav_button: 'back-menu-button'}));
+                Mansard.headerRegion.show(new DesktopHeaderView({title: 'Policy Payment', button: 'fa fa-shopping-cart', menu: 'cart-button', isCart: true, nav: 'fa fa-bars', nav_button: 'main-menu-button'}));
                 Mansard.mainAppRegion.show(new PaymentView());
             } else {
                 this.login();
