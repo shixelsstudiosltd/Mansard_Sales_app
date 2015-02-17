@@ -3,7 +3,9 @@
     <div class="search-result-info">
         <p class="name">{{result.Fullname}}</p>
         <p class="policy-info">{{result.email}}</p>
+        {{#if result.CustomerNo}}
         <p class="member-since">Customer Number: {{result.CustomerNo}}</p>
+        {{/if}}
     </div>
     {{{result.searchButton}}}
 </div>

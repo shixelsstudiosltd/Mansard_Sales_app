@@ -7,7 +7,6 @@ define(['backbone', 'marionette'], function(Backbone, Marionette) {
            "dashboard": "dashboard",
            "dashboard?*tempProduct": "dashboard",
            "products": "products",
-           "contact/add": "contactAdd",
            "customer/add": "contactAdd",
            "customer?*user": "customer",
            "discovery": "discovery",

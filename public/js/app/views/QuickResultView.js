@@ -11,13 +11,14 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
                 'click .add-policys': 'addPolicy'
             },
             initialize: function(options) {
+                var isCustomer = null;
                 this.quickResult = options.quickResult;
-                if (window.Mansard.isFA) {
-                    notFA = false;
+                if (this.quickResult.type === 'customer') {
+                    isCustomer = true;
                 } else {
-                    notFA = true;
+                    isCustomer = false;
                 }
-                this.model = new Model({quickResult: this.quickResult, notFA: notFA});
+                this.model = new Model({quickResult: this.quickResult, isCustomer: isCustomer});
                 console.log(this.quickResult);
             },
             onRender: function () {
@@ -42,10 +43,15 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
             },
             addPolicy: function(e) {
                 e.preventDefault();
-                if (this.quickResult.CustomerNo) {
+                if (this.quickResult.type === 'customer') {
                     window.Mansard.customer = this.quickResult.CustomerNo;
+                     window.Mansard.appRouter.navigate('products', {trigger: true});
+                } else if (this.quickResult.type === 'contact') {
+                    getCust = window.Mansard.api.convert(contact);
+                    window.Mansard.customer = getCust.CustRowID;
+                     window.Mansard.appRouter.navigate('dicovery', {trigger: true});
                 }
-                window.Mansard.appRouter.navigate('products', {trigger: true});
+               
                 //console.log(Mansard.customer);
             }
         });

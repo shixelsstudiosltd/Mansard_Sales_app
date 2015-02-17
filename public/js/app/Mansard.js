@@ -85,6 +85,7 @@ define([
         Mansard.customer = null;
         Mansard.cart.current = 0;
         Mansard.tempPolicy = null;
+        Mansard.discovery = null;
         if (Mansard.cart.count() > 0) {
             Mansard.cart.last = Mansard.cart.count() - 1;
         } else {

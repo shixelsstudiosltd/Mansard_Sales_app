@@ -11,7 +11,8 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
                 'click .go-to-sec-2': 'goTo2',
                 'click .go-to-sec-3': 'goTo3',
                 'click .go-to-sec-4': 'goTo4',
-                'click .submit-discovery': 'submitQuestions'
+                'click .submit-discovery': 'submitQuestions',
+                'click .gotToProducts': 'gotToProducts'
             },
             initialize: function() {
                 this.questions = Mansard.discovery_questions;
@@ -105,6 +106,15 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
                 var section3Result = Mansard.api.discovery_results({sectionId: section3id, sectionScore: section3weight});
                 var section4Result = Mansard.api.discovery_results({sectionId: section4id, sectionScore: section4weight});
 
+                var all_discovery_results = {
+                    section1 : section1Result,
+                    section2 : section2Result,
+                    section3 : section3Result,
+                    section4 : section4Result
+                };
+
+                Mansard.discovery = all_discovery_results;
+
                 $('.discovery-section-4').hide();
                 $('.results-section').fadeIn();
 
@@ -119,6 +129,11 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
 
                 $('.section4-results-section .observations').html(section4Result.Observations);
                 $('.section4-results-section .reccomendations').html(section4Result.Recommendations);
+            },
+            gotToProducts: function(e) {
+                e.preventDefault();
+
+                Mansard.appRouter.navigate('products', {trigger: true});
             }
         });
     });

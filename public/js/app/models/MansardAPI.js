@@ -51,26 +51,56 @@ define([
         },
         search: function(query) {
             var self = this;
+            var results = [];
             var theUrl = null;
             $('.search-results-container').html('<div class="search-load"><i class="fa fa-spinner fa-spin"></i> Searching...</div>');
             $('.results-num').html('-');
             if (Mansard.isFA) {
-                theUrl = 'https://online.mansardinsurance.com/MansardSalesWebApi/api/Contacts/getContactByName?contactname=' + query;
+                theUrl1 = 'https://online.mansardinsurance.com/MansardSalesWebApi/api/Contacts/getContactByName?contactname=' + query;
+                theUrl2 = 'https://online.mansardinsurance.com/MansardSalesWebApi/api/Customer/Post_GetCustomerByName/' + query;
+                $.ajax({
+                    url: theUrl1,
+                    success: function (rData1) {
+                        for (var i = 0; i < rData1.length; i++) {
+                            rData1[i].type = 'contact';
+                        }
+                        results.push(rData1);
+                        $.ajax({
+                            url: theUrl2,
+                            success: function (rData2) {
+                                for (var i = 0; i < rData2.length; i++) {
+                                    rData2[i].type = 'customer';
+                                }
+                                results.push(rData2);
+                                results = $.merge( results[0], results[1]);
+                                console.log(results);
+                               for (var i = 0; i < results.length; i++) {
+                                    var search_result = results[i];
+                                    var result = new SearchResultView({result: search_result});
+                                    self.renderResult(result,results.length);
+
+                                }
+                                $('.results-num').html(results.length);
+                            }
+                        });
+                    }
+                });
             } else {
                 theUrl = 'https://online.mansardinsurance.com/MansardSalesWebApi/api/Customer/Post_GetCustomerByName/' + query;
-            }
-            $.ajax({
-                url: theUrl,
-                success: function (rData) {
-                   for (var i = 0; i < rData.length; i++) {
-                        var search_result = rData[i];
-                        var result = new SearchResultView({result: search_result});
-                        self.renderResult(result,rData.length);
+                $.ajax({
+                    url: theUrl,
+                    success: function (rData) {
+                       for (var i = 0; i < rData.length; i++) {
+                            var search_result = rData[i];
+                            var result = new SearchResultView({result: search_result});
+                            self.renderResult(result,rData.length);
 
+                        }
+                        $('.results-num').html(rData.length);
                     }
-                    $('.results-num').html(rData.length);
-                }
-            });
+                });
+            }
+            
         },
         isFA: function(agent_code, username) {
             var self = this;

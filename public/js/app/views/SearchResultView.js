@@ -28,15 +28,29 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
                     var truncateEmail = emailTrim + '[..]';
                     this.result.Fullname =  truncateName; //Truncate content after 6th character
                 } else {
-                    var name = this.result.FirstName + ' ' + this.result.LastName;
-                    var email = this.result.Email;
-                    var emailTrim = email.substring(0,20);
-                    var nameTrim = name.substring(0, 12);
-                    var keepFullName = name;
-                    var keepEmail = this.result.Email;
-                    var truncateName = nameTrim + '[..]';
-                    var truncateEmail = emailTrim + '[..]';
-                    this.result.Fullname =  truncateName; //Truncate content after 6th character
+                    if (this.result.type === 'customer') {
+                        
+                        var name = this.result.Fullname;
+                        var email = this.result.email;
+                        var emailTrim = email.substring(0,20);
+                        var nameTrim = name.substring(0, 12);
+                        var keepFullName = this.result.Fullname;
+                        var keepEmail = this.result.email;
+                        var truncateName = nameTrim + '[..]';
+                        var truncateEmail = emailTrim + '[..]';
+                        this.result.Fullname =  truncateName; //Truncate content after 6th character
+                    } else if (this.result.type === 'contact') {
+                        var name = this.result.FirstName + ' ' + this.result.LastName;
+                        var email = this.result.Email;
+                        var emailTrim = email.substring(0,20);
+                        var nameTrim = name.substring(0, 12);
+                        var keepFullName = name;
+                        var keepEmail = this.result.Email;
+                        var truncateName = nameTrim + '[..]';
+                        var truncateEmail = emailTrim + '[..]';
+                        this.result.Fullname =  truncateName; //Truncate content after 6th character
+                    }   
+                    
                 }
                 
                 
