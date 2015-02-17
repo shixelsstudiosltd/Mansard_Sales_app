@@ -56,6 +56,8 @@ define([
             $('.search-results-container').html('<div class="search-load"><i class="fa fa-spinner fa-spin"></i> Searching...</div>');
             $('.results-num').html('-');
             if (Mansard.isFA) {
+                results = [];
+                
                 theUrl1 = 'https://online.mansardinsurance.com/MansardSalesWebApi/api/Contacts/getContactByName?contactname=' + query;
                 theUrl2 = 'https://online.mansardinsurance.com/MansardSalesWebApi/api/Customer/Post_GetCustomerByName/' + query;
                 $.ajax({
@@ -74,6 +76,8 @@ define([
                                 results.push(rData2);
                                 results = $.merge( results[0], results[1]);
                                 console.log(results);
+                                $('.search-results-container').html('');
+                                $('.results-num').html('-');
                                for (var i = 0; i < results.length; i++) {
                                     var search_result = results[i];
                                     var result = new SearchResultView({result: search_result});
@@ -90,6 +94,8 @@ define([
                 $.ajax({
                     url: theUrl,
                     success: function (rData) {
+                        $('.search-results-container').html('');
+                        $('.results-num').html('-');
                        for (var i = 0; i < rData.length; i++) {
                             var search_result = rData[i];
                             var result = new SearchResultView({result: search_result});
