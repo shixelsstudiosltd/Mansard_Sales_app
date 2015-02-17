@@ -12,7 +12,13 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
             },
             initialize: function(options) {
                 this.quickResult = options.quickResult;
-                this.model = new Model({quickResult: this.quickResult});
+                if (window.Mansard.isFA) {
+                    notFA = false;
+                } else {
+                    notFA = true;
+                }
+                this.model = new Model({quickResult: this.quickResult, notFA: notFA});
+                console.log(this.quickResult);
             },
             onRender: function () {
             // get rid of that pesky wrapping-div
@@ -36,7 +42,10 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
             },
             addPolicy: function(e) {
                 e.preventDefault();
-                window.location = '#products/' + this.quickResult.CustomerNo;
+                if (this.quickResult.CustomerNo) {
+                    window.Mansard.customer = this.quickResult.CustomerNo;
+                }
+                window.Mansard.appRouter.navigate('products', {trigger: true});
                 //console.log(Mansard.customer);
             }
         });

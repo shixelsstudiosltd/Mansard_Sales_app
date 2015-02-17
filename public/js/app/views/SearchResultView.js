@@ -17,7 +17,7 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
             initialize: function(options) {
                 this.result = options.result;
 
-                if (!options.type) {
+                if (!window.Mansard.isFA) {
                     var name = this.result.Fullname;
                     var email = this.result.email;
                     var emailTrim = email.substring(0,20);
@@ -32,8 +32,8 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
                     var email = this.result.Email;
                     var emailTrim = email.substring(0,20);
                     var nameTrim = name.substring(0, 12);
-                    var keepFullName = this.result.Fullname;
-                    var keepEmail = this.result.email;
+                    var keepFullName = name;
+                    var keepEmail = this.result.Email;
                     var truncateName = nameTrim + '[..]';
                     var truncateEmail = emailTrim + '[..]';
                     this.result.Fullname =  truncateName; //Truncate content after 6th character

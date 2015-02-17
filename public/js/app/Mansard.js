@@ -80,7 +80,7 @@ define([
         Mansard.cart.items = [];
         Mansard.discovery_questions = Mansard.api.discovery_quesions();
        
-        Mansard.tempProduct = true; //temporary product to add to a customer
+        Mansard.tempProduct = false; //temporary product to add to a customer
         Mansard.env = "dev";
         Mansard.customer = null;
         Mansard.cart.current = 0;
