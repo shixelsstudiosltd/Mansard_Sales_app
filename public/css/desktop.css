@@ -55,7 +55,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 @font-face {
   font-family: "Open Sans";
-  src: url('/public/fonts/fonts/opensans/regular.ttf') format('truetype'); }
+  src: url('../fonts/fonts/opensans/regular.ttf') format('truetype'); }
 .unselectable {
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -2035,6 +2035,9 @@ p.customer-editable-field .label {
   .section-results-section .reccomendations {
     padding-top: 5px;
     font-size: 11px; }
+
+.results-section {
+  display: none; }
 
 .kyc-view {
   width: 100%;
