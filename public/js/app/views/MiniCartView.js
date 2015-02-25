@@ -15,11 +15,9 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
 
                 $('.mini-card-total-holder').html(Mansard.cart.total());
                 $('.cart-num').html(Mansard.cart.count());
-                if (Mansard.cart.count() > 2) {
-                    this.items = [Mansard.cart.items[0], Mansard.cart.items[1],Mansard.cart.items[2]];
-                } else {
-                    this.items = Mansard.cart.items;
-                } 
+
+                this.items = Mansard.cart.items;
+                
 
                 for (var i = 0; i < this.items.length; i++) {
                     this.items[i].pos = i;

@@ -84,18 +84,56 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
             },
             startLifeQuote: function(e) {
                 e.preventDefault();
+
+              
+
                 $('.quote_value').slideUp();
                 var quote_against = $('.life-drop').find('option:selected');
                 $('.quote-form').slideDown();
                 $('.temp-search-result').hide();
-                this.product.product_type = quote_against.data('productcode');
-                this.product.name = quote_against.val();
+                $('.quote-title').html(quote_against.val());
                 this.product.product_id = quote_against.data('productid');
-                this.product.product_class = quote_against.data('productclassid');
-                this.product.wholelife = quote_against.data('iswholelife');
-                this.product.paymentOptions = quote_against.data('paymentoptions');
+                this.product.product_type = quote_against.data('productcode');
 
-                this.getLifeQuote(this.product.productid);
+                var riders = Mansard.api.quote('life', {policy: this.product.product_id});
+                var riderOptions = [];
+
+                for (var i = 0; i < riders.length; i++) {
+                    var riderOption = '<option data-ridercode="' + riders[i].RiderCode + '" data-riderlevel="' + riders[i].RiderLevel + '">' + riders[i].value + '</option>';
+                    riderOptions.push(riderOption);
+                }
+                var insPeriods = Mansard.api.policy_dropdowns('insPeriod', this.product.product_type);
+                var insPeriodOptions = [];
+                for (var j = 0; j < insPeriods.length; j++) {
+                    var insOption = '<option value="' + insPeriods[j].Value + '">' + insPeriods[j].Description + '</option>';
+                    insPeriodOptions.push(insOption);
+                }
+
+                var payPeriods = Mansard.api.policy_dropdowns('payPeriod', this.product.product_type);
+                var payPeriodOptions = [];
+                for (var k = 0; k < payPeriods.length; k++) {
+                    var payOption = '<option value="' + payPeriods[k].Value + '">' + payPeriods[k].Description + '</option>';
+                    payPeriodOptions.push(payOption);
+                }
+
+                var payFreqs = Mansard.api.policy_dropdowns('payFreq');
+                var payFreqsOptions = [];
+                for (var l = 0; l < payFreqs.length; l++) {
+                    var payFreqsOption = '<option value="' + payFreqs[l].Value + '">' + payFreqs[l].Description + '</option>';
+                    payFreqsOptions.push(payFreqsOption);
+                }
+
+                
+                $('.quote-question-1').html('<label class="quote-question-1-label">Sum Assured:</label><input class="quote-question-1-q" type="text" placeholder="e.g. 100,000">');
+                $('.quote-question-2').html('<label class="quote-question-2-label">Rider Type:</label><select class="quote-question-2-q">' + riderOptions.join('') + '</select>');
+                $('.quote-question-3').html('<label class="quote-question-3-label">Insurance Period:</label><select class="quote-question-3-q">' + insPeriodOptions.join('') + '</select>');
+                $('.quote-question-4').html('<label class="quote-question-4-label">Payment Period:</label><select class="quote-question-4-q">' + payPeriodOptions.join('') + '</select>');
+                $('.quote-question-5').html('<label class="quote-question-5-label">Payment Frequency:</label><select class="quote-question-5-q">' + payFreqsOptions.join('') + '</select>');
+                $('.quote-question-6').html('<label class="quote-question-6-label">Birth Date:</label><input class="quote-question-6-q" type="date"');
+
+                $('.quote-button').html('<quote-buttonon class="btn btn-primary quote-life-button-btn">Get Quote</button>');
+
+
             },
             getMotorQuote: function(e) {
                 e.preventDefault();
@@ -129,27 +167,28 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
             },
             getLifeQuote: function() {
 
-                var policy_type = this.product.product_id;
-                var data = {
-                    policy: policy_type
-                };
-                var quote_result = Mansard.api.quote('life', data);
-                this.product.quote = quote_result;
-                this.product.qty = 1;
-                if (!quote_result.summassured) {
-                    quote_result.summassured = '0';
-                } else {
-                    quote_result = quote_result.summassured.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                }
-                this.product.price = quote_result;
-                this.product.img = 'default_product.png';
-                this.product.customer = Mansard.customer;
-                this.product.type = 'life';
-                $('.quote_amount').html(quote_result);
-                $('.quote_value').slideDown();
-                $('.quote-form').slideUp();
+                // var policy_type = this.product.product_id;
+                // var data = {
+                //     policy: policy_type
+                // };
+                // var quote_result = Mansard.api.quote('life', data);
+                // this.product.quote = quote_result;
+                // this.product.qty = 1;
+                // if (!quote_result.summassured) {
+                //     quote_result.summassured = '0';
+                // } else {
+                //     quote_result = quote_result.summassured.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // }
+                // this.product.price = quote_result;
+                // this.product.img = 'default_product.png';
+                // this.product.customer = Mansard.customer;
+                // this.product.type = 'life';
+                // $('.quote_amount').html(quote_result);
+                // $('.quote_value').slideDown();
+                // $('.quote-form').slideUp();
             },
             addToCart: function() {
+                console.log('prodcut to add', this.product);
                 Mansard.cart.add(this.product);
                 Mansard.cart.last = Mansard.cart.count() - 1;
                 for (var i = 0; i < Mansard.cart.items.length; i++) {

@@ -43,43 +43,7 @@ define([
 
         Mansard.api = new MansardAPI();
         Mansard.cart = new MansardCart();
-        // var item1 = {
-        //     bodytype: "95",
-        //     customer: "3100001014",
-        //     img: "default_product.png",
-        //     name: "MANSARD Motorvintage",
-        //     paymentOptions: "3 Installments",
-        //     pos: 0,
-        //     price: "135,000",
-        //     product_class: 3,
-        //     product_id: 50,
-        //     product_type: 1,
-        //     qty: 1,
-        //     quote: "135,000",
-        //     sumassured: "3000000",
-        //     type: "motor",
-        //     wholelife: 0
-        // };
-        // var item2 = {
-        //     bodytype: "1",
-        //     customer: "3100001014",
-        //     img: "default_product.png",
-        //     name: "MANSARD Motorclassic",
-        //     paymentOptions: "Full Payment",
-        //     pos: 1,
-        //     price: "105,000",
-        //     product_class: 3,
-        //     product_id: 51,
-        //     product_type: 48,
-        //     qty: 1,
-        //     quote: "105,000",
-        //     sumassured: "3000000",
-        //     type: "motor",
-        //     wholelife: 0
-        // };
-        Mansard.cart.items = [];
-        Mansard.discovery_questions = Mansard.api.discovery_quesions();
-       
+        Mansard.discovery_questions = Mansard.api.discovery_quesions();   
         Mansard.tempProduct = false; //temporary product to add to a customer
         Mansard.env = "dev";
         Mansard.customer = null;

@@ -19,6 +19,7 @@ define([
             _.bindAll(this);
 
         },
+        items: [],
         count: function() {
             return Mansard.cart.items.length;  
         },
@@ -44,7 +45,9 @@ define([
             Mansard.cart.items = [];
         },
         add: function(item) {
+            console.log('items before push: ', Mansard.cart.items);
             Mansard.cart.items.push(item);
+            console.log('items after push: ', Mansard.cart.items);
         }, 
         edit: function(item, old_key, new_val) {
            var position = Mansard.cart.items.indexOf(item);
