@@ -129,7 +129,7 @@ define( ['Mansard', 'backbone', 'marionette', 'jquery', 'models/Model', 'hbs!tem
                 $('.quote-question-3').html('<label class="quote-question-3-label">Insurance Period:</label><select class="quote-question-3-q">' + insPeriodOptions.join('') + '</select>');
                 $('.quote-question-4').html('<label class="quote-question-4-label">Payment Period:</label><select class="quote-question-4-q">' + payPeriodOptions.join('') + '</select>');
                 $('.quote-question-5').html('<label class="quote-question-5-label">Payment Frequency:</label><select class="quote-question-5-q">' + payFreqsOptions.join('') + '</select>');
-                $('.quote-question-6').html('<label class="quote-question-6-label">Birth Date:</label><input class="quote-question-6-q" type="date"');
+                $('.quote-question-6').html('<label class="quote-question-6-label">Birth Date:</label><input class="quote-question-6-q" type="date">');
 
                 $('.quote-button').html('<quote-buttonon class="btn btn-primary quote-life-button-btn">Get Quote</button>');
 
